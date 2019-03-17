@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sudoku</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald:400,500" rel="stylesheet">
+</head>
+<body>
+	<main>
+		<div class="container">
+			<canvas id="canvas" width="360" height="360"></canvas>
+			<div class="restart" id="restart">Restart</div>
+		</div>
+		<div class="menu">
+			<div class="settings">
+				<h2 class="settings__text">Random numbers in sudoku</h2>
+				<input type="range" min="17" max="33" step="2" value="17" id="randomize">
+				<span id="label_randomize">17</span>
+				<button class="solve" id="solve">Solve</button>
+				<h3 class="wait" id="wait">Please wait...</h3>
+			</div>
+		</div>
+	</main>
+	<script src="src/Cube.js"></script>
+	<script src="src/sudoku.js"></script>
+	<script src="src/ui.js"></script>
+</body>
+</html>
