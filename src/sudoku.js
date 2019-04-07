@@ -50,6 +50,45 @@
 	}
 	
 	random(17);
+	
+	let quantity = 0;
+	function preSolver(){
+		let preArr = matrix;
+		for(let i=0;i<9;i++){
+
+			for(let j=0;j<9;j++){
+			
+				if(preArr[i][j] === 0){
+
+					for(let n=1;n<10;n++){
+
+						if(isValid(i,j,n)){
+
+							preArr[i][j] = n;
+
+							if(preSolver()){
+								return true;
+							}
+
+							else{
+								preArr[i][j] = 0;
+							}	
+						}
+						if(quantity > 2000) break;
+					}	
+					quantity++;
+					return false;
+				}
+			}
+
+		}
+		if(quantity > 2000){
+			location.reload(true);
+		}
+		return true;
+
+	}
+	preSolver();
 
 	function solver(){
 		
